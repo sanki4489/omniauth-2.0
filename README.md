@@ -1,0 +1,13 @@
+Introduction to OAuth 2.0
+OAuth is often described as a valet key for the web.
+
+Now, it would be really uncool to share your Facebook or Google credentials with any third-party client application that only needs to know about your Friends, as it not only gives the app limitless and undesirable access to your account, but it also has the inherent weakness associated with passwords. This is where OAuth comes into play, as it outlines an access-delegation/authorization framework that can be employed without the need of sharing passwords. For this reason, OAuth is often described as a valet key for the web. It can be thought of as a special key that allows access to limited features and for a limited period of time without giving away full control, just as the valet key for a car allows the parking attendant to drive the car for a short distance, blocking access to the trunk and the on-board cell phone.
+
+However, OAuth is not a new concept, but a standardization and combined wisdom of many well established protocols. Also worth noting is that OAuth is not just limited to social-media applications, but provides a standardized way to share information securely between various kinds of applications that expose their APIs to other applications. OAuth 2.0 has a completely new prose and is not backwards compatible with its predecessor spec. Having said that, it would be good to first cover some basic OAuth2.0 vocabulary before diving into further details.
+
+Resource Owner : An entity capable of granting access to a protected resource. Most of the time, it's an end-user.
+Client : An application making protected resource requests on behalf of the resource owner and with its authorization. It can be a server-based, mobile (native) or a desktop application.
+Resource Server : The server hosting the protected resources, capable of accepting and responding to protected resource requests.
+Authorization Server : The server issuing access grants/tokens to the client after successfully authenticating the resource owner and obtaining authorization.
+Access Token : Access tokens are credentials presented by the client to the resource server to access protected resources. It's normally a string consisting of a specific scope, lifetime and other access attributes and it may self contain the authorization information in a verifiable manner.
+Refresh Token : Although not mandated by the spec, access tokens ideally have an expiration time which can last anywhere from a few minutes to several hours. Once an access token is expired, the client can request the authorization server to issue a new access token using the refresh token issued by the authorization server.
